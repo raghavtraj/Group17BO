@@ -49,11 +49,14 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
     function updateResult() {
-        const value1 = parseFloat(input1.value) || 0; 
-        const value2 = parseFloat(input2.value) || 0;
-
+        const value1 = parseFloat(input1.value)||0; 
+        const value2 = parseFloat(input2.value)||0;
         const sum = value1 + value2;
-
-        resultInput.value = sum;
+        if(value1==""&&value2==""){
+            resultInput.value=" ";
+        }
+        else{
+            resultInput.value = sum;
+        }
     }
 });
