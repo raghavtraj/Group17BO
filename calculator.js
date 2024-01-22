@@ -37,3 +37,23 @@ function calculate() {
         display.textContent = 'Error';
     }
 }
+document.addEventListener('DOMContentLoaded', function() {
+    // Get references to the input elements
+    const input1 = document.getElementById('input1');
+    const input2 = document.getElementById('input2');
+    const resultInput = document.getElementById('result');
+
+    // Add event listeners to input1 and input2
+    input1.addEventListener('input', updateResult);
+    input2.addEventListener('input', updateResult);
+
+    // Function to update the result input based on the values in input1 and input2
+    function updateResult() {
+        const value1 = parseFloat(input1.value) || 0; // Convert input values to numbers
+        const value2 = parseFloat(input2.value) || 0;
+
+        const sum = value1 + value2;
+
+        resultInput.value = sum;
+    }
+});
