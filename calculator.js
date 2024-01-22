@@ -37,3 +37,24 @@ function calculate() {
         display.textContent = 'Error';
     }
 }
+
+let  displayfirst = document.getElementById('displayfirst');
+let displaysecond = document.getElementById('displaysecond');
+let result = document.getElementById('result');
+
+displayfirst.addEventListener("input",updateResult);
+displaysecond.addEventListener("input",updateResult);
+
+function updateResult(){
+    let displaysecondValue = displaysecond.value;
+    let displayfirstValue = displayfirst.value;
+    if(displaysecondValue === '') {
+        result.value = displayfirstValue;
+    } else if(displayfirstValue === '') {
+        result.value = displaysecondValue;
+    }
+    else {
+        result.value = displaysecondValue * displayfirstValue;
+    }
+    
+}
